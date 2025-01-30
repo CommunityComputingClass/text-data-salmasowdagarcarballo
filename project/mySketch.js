@@ -1,5 +1,5 @@
-let myMessage = "Good Evening"
-let xLocation = 100;
+let myMessage = "do you like candy? left arrow = yes, right arrow = no"
+let xLocation = 15;
 let myFont;
 
 function preload(){
@@ -8,14 +8,24 @@ function preload(){
 
 function setup() {
   createCanvas(400, 400);
-
+  background("pink");
 }
 function draw() {
-  background(9, 93, 145);
+ 
 noStroke();
 fill("white");
-textSize(30)
+textSize(12)
 textFont(myFont)
-text(myMessage,xLocation,200);
+text(myMessage,xLocation,100);
 xLocation = xLocation
+}
+
+function keyPressed(){
+  if(keyCode === LEFT_ARROW){
+    fill(141, 201, 247)
+  }
+  if (keyCode === RIGHT_ARROW){
+    fill(177, 252, 240)
+  }
+ellipse(random(0,400),random(0,400),10,10)
 }
