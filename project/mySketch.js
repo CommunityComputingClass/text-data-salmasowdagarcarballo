@@ -1,4 +1,6 @@
-let myMessage = "do you like candy? left arrow = yes, right arrow = no"
+let myMessage = "Who is your favorite music artist?"
+let contents = "";
+let Button;
 let xLocation = 15;
 let myFont;
 
@@ -8,24 +10,23 @@ function preload(){
 
 function setup() {
   createCanvas(400, 400);
-  background("pink");
+  Button = createButton("show");
+  Button.position(175,150)
+  Button.mousePressed(showText)
+  background(245, 51, 87);
 }
 function draw() {
  
 noStroke();
 fill("white");
-textSize(12)
+textSize(18)
 textFont(myFont)
 text(myMessage,xLocation,100);
 xLocation = xLocation
 }
-
-function keyPressed(){
-  if(keyCode === LEFT_ARROW){
-    fill(141, 201, 247)
-  }
-  if (keyCode === RIGHT_ARROW){
-    fill(177, 252, 240)
-  }
-ellipse(random(0,400),random(0,400),10,10)
+function keyTyped(){
+  contents = contents + key;
+}
+function showText(){
+  text(contents,50,250,400,200);
 }
