@@ -20,7 +20,7 @@ function setup() {
   textBox.position(50,200)
   textBox.input(storeText)
 
-  background(245, 51, 87);
+  background(245, 159, 195);
 }
 function draw() {
  
